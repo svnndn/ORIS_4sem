@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="human" class="first.Human">
+        <constructor-arg ref="restaurant"/>
+    </bean>
+
+    <bean id="foodProvider" class="first.FoodProvider" abstract="true">
+    </bean>
+
+    <bean id="kitchenStove" class="first.KitchenStove" parent="foodProvider">
+    </bean>
+
+    <bean id="restaurant" class="first.Restaurant" parent="foodProvider">
+    </bean>
+
+    <bean id="theBestSkatertSamobranka" class="first.TheBestSkatertSamobranka" parent="foodProvider">
+    </bean>
+
+</beans>
